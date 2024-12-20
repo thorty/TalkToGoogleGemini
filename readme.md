@@ -16,3 +16,12 @@ pip install -r requirements.txt
 GEMINI_API_KEY=<key>
 
 from https://aistudio.google.com/app/apikey?hl=de
+
+## run
+```bash
+python live_test.py
+```
+
+## notes
+
+if speaker is to loud bargein happens and gemini talks to itself :neckbeard:

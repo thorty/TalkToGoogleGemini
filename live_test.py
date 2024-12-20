@@ -4,12 +4,16 @@ import json
 import os
 import pyaudio
 from websockets.asyncio.client import connect
-
+from dotenv import load_dotenv
 
 class SimpleGeminiVoice:
     def __init__(self):
+        
+        # Load environment variables from the .env file
+        load_dotenv()
+        
         self.audio_queue = asyncio.Queue()
-        self.api_key = os.environ.get("GEMINI_API_KEY")
+        self.api_key = os.getenv("GEMINI_API_KEY")
         self.model = "gemini-2.0-flash-exp"
         self.uri = f"wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent?key={self.api_key}"
         # Audio settings
